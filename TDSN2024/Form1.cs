@@ -16,5 +16,33 @@ namespace TDSN2024
         {
             InitializeComponent();
         }
+
+        private void cmbForma_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cmbForma.Text)
+            {
+                case "Circunferência":
+                    ExibirRaio(true);
+                    ExibirLado(false);
+                    break;
+                case "Triângulo":
+                    ExibirRaio(true);
+                    ExibirLado(false);
+                    cmbTriangulo.Visible = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void ExibirLado(bool visivel)
+        {
+            lblLado.Visible = txtLado.Visible = visivel;
+        }
+
+        private void ExibirRaio(bool visivel)
+        {
+            lblRaio.Visible = txtRaio.Visible = visivel;
+        }
     }
 }
