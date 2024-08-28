@@ -25,6 +25,10 @@ namespace TDSN2024
                     ExibirRaio(true);
                     ExibirLado(false);
                     break;
+                case "Quadrado":
+                    ExibirRaio(false);
+                    ExibirLado(true);
+                    break;
                 case "Triângulo":
                     ExibirRaio(true);
                     ExibirLado(false);
@@ -43,6 +47,29 @@ namespace TDSN2024
         private void ExibirRaio(bool visivel)
         {
             lblRaio.Visible = txtRaio.Visible = visivel;
+        }
+
+        private void btnCriar_Click(object sender, EventArgs e)
+        {
+            switch (cmbForma.Text)
+            {
+                case "Quadrado":
+                    FormaGeometrica objeto;
+                    objeto = new Quadrado() { Lado = Convert.ToDouble(txtLado.Text) };
+                    cmbObjetos.Items.Add(objeto);
+                    txtLado.Clear();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void cmbObjetos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FormaGeometrica objeto = cmbObjetos.SelectedItem as FormaGeometrica;
+
+            txtArea.Text = objeto.CalcularArea().ToString();
+            txtPerimetro.Text = objeto.CalcularPerimetro().ToString();
         }
     }
 }

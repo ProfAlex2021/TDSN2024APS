@@ -100,6 +100,7 @@
             this.btnCriar.TabIndex = 4;
             this.btnCriar.Text = "Criar";
             this.btnCriar.UseVisualStyleBackColor = true;
+            this.btnCriar.Click += new System.EventHandler(this.btnCriar_Click);
             // 
             // cmbObjetos
             // 
@@ -108,6 +109,7 @@
             this.cmbObjetos.Name = "cmbObjetos";
             this.cmbObjetos.Size = new System.Drawing.Size(121, 21);
             this.cmbObjetos.TabIndex = 5;
+            this.cmbObjetos.SelectedIndexChanged += new System.EventHandler(this.cmbObjetos_SelectedIndexChanged);
             // 
             // lblRaio
             // 
